@@ -1,135 +1,439 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta name="viewport" content="width=device-width,  initial-scale=1">
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
-
-</head>
-<div class="w3-2021-ultimate-gray">
-
-
-<p align="right">
-<div class="w3-panel w3-padding-16 w3-bar ">
-<div class="w3-sand w3-top w3-hide-small">
-<div class="w3-bar w3-slargew3-black w3-opacity w3-hover-opcity-off" id="myNavbar">
-<ul class="w3-ul">
-   <a href="index.html" class="w3-bar-item w3-button w3-xlarge"><i class="fa fa-plane" ></i> Destinos</a><a href="nosotros.html" class="w3-bar-item w3-button w3-xlarge"> Nosotros</a><a href="contacto.html" class="w3-bar-item w3-button w3-xlarge">Contacto</a>
-</ul>
-</p>
-</div>
-</div>
-</div>
-	
-
-</div>
-</div>
-<head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VET Travel</title>
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      background-image: url('img/mimami.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
+      font-family: "Century Gothic", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F0;
     }
-	h3 {
-      text-align: justify;
-      color: white;
+
+    .navbar {
+      background-color: #fdf5e6;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 8px 16px;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .navbar-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #fdf5e6;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .navbar-menu.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .content {
+      margin-top: 60px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #fdf5e6;
+      color: black;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: black;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+<body>
 
-  <h3><br>Vet Travel comenzo su desarrollo en Mayo 2022 en Coacalco,Edomex donde se ubica nuestra oficina matriz.<br>
-  Estamos enfocados en que sientan una gran comodidad al viajar con nosotrosy gozar un de un servicio premium
-  por un costo accesible adaptable a tus preferencias.<br><br>
-  Nosotros queremos llegar a ser una empresa reconocida por nuestros servicios y experiencias. Ya sea asesorandote
-  teniendo atencion personalizada en nuestro sitio web donde podras realizar tu pago de forma segura, puedes tener
-  la confianza que te brindaremos la mejor experiencia en cada viaje.<br><br>
-  En Vet travel, Nuestra pasion por viajar mas que vender viajes.<br>
-  Nos apasiona ayudar a nuestros clientes vivir increibles experiencias y descubrir el mundo.<br><br>
-  La empresa se basa en la honestidad, el respeto mutuo, el trabajo en equipo, la responsabilidad, el
-  profesionalismo, la transparencia en las acciones, el compromiso, el crecimiento, la innovacion constante
-  la importancia de nuestros clientes para la vitalidad de la empresa.</h3><br>
-  <center>
-  <img src="img/Logovetblanco.png" width="200" height="70">
-  </center><br>
+<div class="navbar">
+  <a href="index.html" class="logo"><img src="Logo_vet.png" width="85" height="30" alt="Logo VET Travel"></a>
+  <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  <div class="navbar-menu">
+    <a href="index.html">Productos</a>
+    <a href="Nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</div>
 
+<div class="content">
 
-<div class="w3-container w3-light-grey">
-<table width="95%" height="30%"; style="padding: 10px">
-<tr>
-<td>
-<ul style="font-family: Century Gothic">
-<h2> Contactate con nosotros </h2>
-<h3>5569001877</h3>
-<h3>5567669795</h3>
-</u1>
-</td>
-<td>
-<ul style="font-family: Century Gothic;">
-<h2>Visitanos en</h2>
-<a href="https://www.facebook.com/israel.rs.5?milbextid=ZbWKwl"><img src="img/facebook.png" width="30" height="30"></a>&nbsp&nbsp&nbsp
-<a href="https://instagram.com/excursiontourmx?igshid=NTc4MTIwNjQ2YQ=="><img src="img/instagram.png" width="30" height="30"></a>&nbsp&nbsp&nbsp
-<a href="https://www.tiktok.com/@excursiontourmx?_t=8d9RoDO2jZ8&_r=1"><img src="img/tiktok.png" width="30" height="30"></a>
-</td>
-<td>
-<ul style="font-family: Arial;">
+<style>
+  .w3-container {
+    position: relative;
+  }
 
+  .w3-panel {
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+    z-index: 1; 
+	font-family: "Courier New", monospace;
+  }
+</style>
+</head>
+<body>
 
-<p style="font-family: Century Gothic;">vettravel.us@gmail.com</p>
 <div class="w3-container">
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-light-grey">Desarrollo</button>
+  <div class="w3-panel w3-red w3-display-container w3-card-4 w3-round-large" style="width:200px">
+    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright ">&times;</span>
+    <div class="w3-container">
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-red ">Ordenar!</button>
 <div id="id01" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-sand"> 
-        <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-large w3-display-topright">&times;</span>
-        <h2 style="font-family: Arial;">Desarrollo</h2>
+      <header class="w3-container w3-red"> 
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2>Ordenar!</h2>
       </header>
       <div class="w3-container w3-2021-ultimate-gra">
-        <table width="95%" height="95%"; style="padding: 10px; background-color: B3BFB4;">
-<tr>
-<div class="w3-container">
-
-
-<td 1  class="w3-center w3-animate-left"><center><img src="img/cecycerro.png" width="400" height="475">
-</div>
-</td>
-<td 2>
-<ul style="font-family: Century Gothic;">
-<div class="w3-container w3-animate-opacity">
+        
+		<div class="w3-container">
   
+  <div class="w3-card-4">
 
- <font color="343232"> <h3> Desarrolladores: </h3>
-<h3> Cruz Salda&ntildea Jose Adolfo </h3>
-<h3> Hernandez Flores Juan Carlos </h3>
-<h3> Garcia Montoya Jonatan </h3>
-<h3> Ramires Salazar Leonardo Miguel </h3>
-<h3> Especialidad en programacion </h3>
-<h3> Modulo 3 </h3><h3>Desarrolla aplicaciones Web</h3>
-<h3> Asesor: </h3><h3>Mtro. Delgadillo Estrada Gerardo Daniel </h3>
+    <body>
+<font color="ffffff">
 
-</div>
+
+<form action="Preordenar.php" method="post">
+    <div class="w3-card-4">
+        <center>
+            <select class="w3-select" name="vehiculo">
+                <option value="" disabled selected>Vehiculo</option>
+                <option value="1">Tesla Model 3</option>
+                <option value="2">Mercedes Benz Smart</option>
+                <option value="3">Tesla Model Y</option>
+                <option value="4">Toyota Prius Hibrid</option>
+                <option value="5">Tesla Model S</option>
+                <option value="6">Tesla Model X</option>
+            </select>
+
+            <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Escribe tu nombres" name="nombre">
+            <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Escribe tu apellidos" name="apellidos">
+            <input class="w3-input w3-border w3-animate-input" type="email" style="width:30%" placeholder="Escribe tu correo electronico" name="correo">
+            <input class="w3-input w3-border w3-animate-input" type="tel" style="width:30%" placeholder="Escribe tu numero de telefono movil" name="telefono">
+
+            <center><font color="black"><h2>Tarjeta de credito</h2></font></center>
+
+            <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Escribe el nombre que esta en la tarjeta" name="nombretarj">
+            <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Escribe el numero de la tarjeta" name="numetarjeta">
+
+            <select class="w3-select" name="mes_expiracion">
+                <option value="" disabled selected>Mes de expiracion</option>
+                    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+	 <option value="4">4</option>
+	  <option value="5">5</option>
+	   <option value="6">6</option>
+	    <option value="7">7</option>
+		 <option value="8">8</option>
+		  <option value="9">9</option>
+		   <option value="10">10</option>
+		    <option value="11">11</option>
+			 <option value="12">12</option>
+            </select>
+
+            <select class="w3-select" name="ano_expiracion">
+                <option value="" disabled selected>Fecha de expiracion</option>
+                  <option value="1">2023</option>
+    <option value="2">2024</option>
+    <option value="3">2025</option>
+	 <option value="4">2026</option>
+	  <option value="5">2027</option>
+	   <option value="6">2028</option>
+	    <option value="7">2029</option>
+		 <option value="8">2030</option>
+		  <option value="9">2031</option>
+		   <option value="10">2032</option>
+		    <option value="11">2033</option>
+			 <option value="12">2034</option>
+			   <option value="13">2036</option>
+		   <option value="14">2036</option>
+		    <option value="15">2037</option>
+			 <option value="16">2038</option>
+            </select>
+
+            <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="CVV" name="CVV">
+            <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Codigo postal" name="CP">
+
+            <p><button class="w3-btn w3-red">Ordenar</button></p>
+        </center>
+    </div>
+</form>
+
+
 </font>
-</a>
-</td>
-</table>
+</body>
+  </div>
+</div>
       </div>
     </div>
   </div>
 </div>
-
-</td>
-</tr>
-</table>
-<br>
-<br>
-<center>
-  <img src="img/logo.png"  width="200" height="60">
-</center>
-<br>
-<br>
+  
+  </div>
 </div>
+
+
+
+
+ <style>
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Lucida Console", Monaco, monospace;
+}
+</style>
+
+<div class="w3-display-container w3-animate-opacity">
+  <img src="fondo_vet.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo"><img src="Logo_vet.png" width="340" height="120"></div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <h7>Cruz Salda&ntildea Jose Adolfo </h7>
+  </div>
+</div>
+
+
+<div class="w3-card-4 w3-margin">
+  
+<div class="w3-display-container w3-animate-opacity">
+  <img src="huaesteca1.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo">
+ 
+<body>
+
+<div class="w3-container">
+<h1 class="w3-xxxlarge 3-text-black w3-Courier New">La Huasteca Potosina</h1>
+  </div>
+  </body>
+  </stile>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <a href="model3.html"><button class="w3-button w3-white w3-border w3-round-large w3-padding-large">Explorar</button></a>
+  </div>
+</div>
+  <div class="w3-container">
+    <font color="111111"><h1 ><b>La Huasteca Potosina, San Luis Potosi </b></h1>
+  </div>
+</div>
+
+
+<div class="w3-card-4 w3-margin">
+  
+<div class="w3-display-container w3-animate-opacity">
+  <img src="acapulco.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo">
+ 
+<body>
+
+<div class="w3-container">
+<h1 class="w3-xxxlarge">Acapulco De Juarez</h1>
+  </div>
+  </body>
+  </stile>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <a href="index.html"><button class="w3-button w3-white w3-border w3-round-large w3-padding-large">Explorar</button></a>
+  </div>
+</div>
+  <div class="w3-container">
+    <font color="111111"><h1><b>Acapulco De Juarez, Guerrero</b></h1>
+  </div>
+</div>
+
+
+<div class="w3-card-4 w3-margin">
+  
+<div class="w3-display-container w3-animate-opacity">
+  <img src="cancun.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo">
+ 
+<body>
+
+<div class="w3-container">
+<h1 class="w3-xxxlarge">Cancun</h1>
+  </div>
+  </body>
+  </stile>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <a href="index.html"><button class="w3-button w3-white w3-border w3-round-large w3-padding-large">Explorar</button></a>
+  </div>
+</div>
+  <div class="w3-container">
+    <font color="111111"><h1><b>Cancun, Quintanarro</b></h1>
+  </div>
+</div>
+
+
+<div class="w3-card-4 w3-margin">
+  
+<div class="w3-display-container w3-animate-opacity">
+  <img src="huatulco.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo">
+ 
+<body>
+
+<div class="w3-container">
+<h1 class="w3-xxxlarge">Huatulco</h1>
+  </div>
+  </body>
+  </stile>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <a href="index.html"><button class="w3-button w3-white w3-border w3-round-large w3-padding-large">Explorar</button></a>
+  </div>
+</div>
+  <div class="w3-container">
+    <font color="111111"><h1><b>Huatulco, Oaxaca</b></h1>
+  </div>
+</div>
+
+
+<div class="w3-card-4 w3-margin">
+  
+<div class="w3-display-container w3-animate-opacity">
+  <img src="machupichu.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo">
+ 
+<body>
+
+<div class="w3-container">
+<h1 class="w3-xxxlarge">Machu Pichu</h1>
+  </div>
+  </body>
+  </stile>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <a href="index.html"><button class="w3-button w3-white w3-border w3-round-large w3-padding-large">Explorar</button></a>
+  </div>
+</div>
+  <div class="w3-container">
+    <font color="111111"><h1><b>Machu Pichu, Peru</b></h1>
+  </div>
+</div>
+
+
+<div class="w3-card-4 w3-margin">
+  
+<div class="w3-display-container w3-animate-opacity">
+  <img src="guadalajara.jpg" alt="Boat" style="width:100%;max-height:40%px;">
+  <div class="w3-display-middle w3-text-white w3-jumbo">
+ 
+<body>
+
+<div class="w3-container">
+<h1 class="w3-xxxlarge">Guadalajara</h1>
+  </div>
+  </body>
+  </stile>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-text-white w3-large">
+    <a href="index.html"><button class="w3-button w3-white w3-border w3-round-large w3-padding-large">Explorar</button></a>
+  </div>
+</div>
+  <div class="w3-container">
+    <font color="111111"><h1><b>Guadalajara, Jalisco</b></h1>
+  </div>
+</div>
+
+
+  <!-- Aquí va el contenido principal -->
+</div>
+
+<footer>
+  <p>Contacta con nosotros: <a href="https://api.whatsapp.com/send/?phone=5215567669795">556766979</a></p>
+  <p>Correo: <a href="mailto:excursiontourmx001@gmail.com">excursiontourmx001@gmail.com</a></p>
+  <p>
+    <a href="https://www.facebook.com/israel.rs.5?milbextid=ZbWKwl">Facebook</a> |
+    <a href="https://instagram.com/excursiontourmx?igshid=NTc4MTIwNjQ2YQ==">Instagram</a> |
+    <a href="https://www.tiktok.com/@excursiontourmx?_t=8d9RoDO2jZ8&_r=1">TikTok</a>
+  </p>
+  <p>Desarrollado por el equipo de ADOLFUS</p>
+  <img src="logo.png" width="200" height="60" alt="Logo ADOLFUS">
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('open');
+  }
+</script>
+
 </body>
 </html>
